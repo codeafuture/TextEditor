@@ -1,0 +1,28 @@
+﻿@model IEnumerable<TextEditor.Models.Doc>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div class="d-flex justify-content-center align-items-center" style="width:150px; height:200px;background-color:lightgray; font-size:100px;">
+    <a style="text-decoration:none; color: black;" asp-action="Create">+</a>
+</div>
+<span style="font-weight:bold">Blank Doc</span>
+
+<hr/>
+
+<div class="row">
+@foreach(var item in Model)
+{
+    <div class="col-2">
+        <div class="d-flex justify-content-center align-items-center" style="width:150px; height:200px;background-color:lightblue; font-size:100px;">
+            <a style="text-decoration:none; color: black;" asp-action="Edit" asp-route-id="@item.Id">📃</a>
+        </div>
+        <span style="font-weight: bold">@item.Title</span>
+    </div>
+    
+}
+</div>
+
